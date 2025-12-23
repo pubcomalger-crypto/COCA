@@ -25,13 +25,13 @@
         }
 
         .profile-image {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            border: 5px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
 
         .profile-image img {
@@ -120,8 +120,8 @@
         }
 
         .social-icon {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 20px;
             display: flex;
             justify-content: center;
@@ -230,8 +230,8 @@
 
         /* Icons SVG styles */
         .social-icon svg {
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             fill: white;
         }
 

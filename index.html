@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
     <script src="config.js"></script>
     <script src="script.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -16,6 +17,16 @@
         
         <p class="bio-text" id="bio-text"></p>
         <h1 id="profile-name">Daisy Parkhouse</h1>
+        <!-- Bouton Enregistrer le contact -->
+        <div class="save-contact-container">
+            <button id="save-contact-btn" class="save-contact-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
+                    <path d="M19 3h-1.5v1.5h-15V3H1v4.5h1.5V4.5h15V15H9v1.5h10.5V3z"/>
+                    <path d="M4.5 6H6v10.5c0 .83.67 1.5 1.5 1.5h9c.83 0 1.5-.67 1.5-1.5V6h1.5v10.5c0 1.66-1.34 3-3 3h-9c-1.66 0-3-1.34-3-3V6z"/>
+                </svg>
+                Enregistrer le contact
+            </button>
+        </div>
 
         <div class="social-grid">
             <div class="icon-wrapper">
@@ -131,9 +142,10 @@
                 <span class="icon-label">Localisation</span>
             </div>
 
-            <div class="icon-wrapper">
+            <div class="icon-wrapper" id="snapchat-wrapper">
                 <a href="https://snapchat.com/add/daisyparkhouse"
        class="social-icon snapchat"
+       id="snapchat-link"
        target="_blank">
         <svg class="snap-icon"
              xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +169,6 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <p id="modalText" style="margin-bottom: 10px; font-size: 18px; font-weight: 600;"></p>
             <a href="#" id="modalLink" target="_blank" class="modal-link">Ouvrir</a>
-            <button id="copyBtn" class="copy-btn" onclick="copyToClipboard()">Copier</button>
         </div>
     </div>
 
@@ -189,7 +200,11 @@
             if (socialLinks.facebook) {
                 const fbLink = document.getElementById('facebook-link');
                 if (fbLink) {
-                    fbLink.href = `https://facebook.com/${socialLinks.facebook}`;
+                    // Utiliser directement le lien complet fourni dans la configuration
+                    fbLink.href = socialLinks.facebook.startsWith('http') ? 
+                        socialLinks.facebook : 
+                        `https://facebook.com/${socialLinks.facebook}`;
+                    
                     // Masquer si désactivé
                     if (config.enabledIcons && !config.enabledIcons.facebook) {
                         fbLink.parentElement.style.display = 'none';
@@ -201,7 +216,11 @@
             if (socialLinks.instagram) {
                 const igLink = document.getElementById('instagram-link');
                 if (igLink) {
-                    igLink.href = `https://instagram.com/${socialLinks.instagram}`;
+                    // Utiliser directement le lien complet fourni dans la configuration
+                    igLink.href = socialLinks.instagram.startsWith('http') ? 
+                        socialLinks.instagram : 
+                        `https://instagram.com/${socialLinks.instagram}`;
+                        
                     if (config.enabledIcons && !config.enabledIcons.instagram) {
                         igLink.parentElement.style.display = 'none';
                     }
@@ -212,7 +231,11 @@
             if (socialLinks.tiktok) {
                 const tiktokLink = document.getElementById('tiktok-link');
                 if (tiktokLink) {
-                    tiktokLink.href = `https://tiktok.com/@${socialLinks.tiktok}`;
+                    // Utiliser directement le lien complet fourni dans la configuration
+                    tiktokLink.href = socialLinks.tiktok.startsWith('http') ? 
+                        socialLinks.tiktok : 
+                        `https://tiktok.com/@${socialLinks.tiktok}`;
+                        
                     if (config.enabledIcons && !config.enabledIcons.tiktok) {
                         tiktokLink.parentElement.style.display = 'none';
                     }
@@ -234,7 +257,8 @@
             if (socialLinks.telegram) {
                 const tgLink = document.getElementById('telegram-link');
                 if (tgLink) {
-                    tgLink.href = `https://t.me/${socialLinks.telegram}`;
+                    // Utiliser le numéro de téléphone pour le lien Telegram, similaire à WhatsApp
+                    tgLink.href = `https://t.me/+${socialLinks.telegram.replace(/[^0-9]/g, '')}`;
                     if (config.enabledIcons && !config.enabledIcons.telegram) {
                         tgLink.parentElement.style.display = 'none';
                     }
@@ -287,6 +311,20 @@
                     // Masquer si désactivé
                     if (config.enabledIcons && !config.enabledIcons.maps) {
                         mapsLink.parentElement.style.display = 'none';
+                    }
+                }
+            }
+            
+            // Snapchat
+            if (socialLinks.snapchat) {
+                const snapchatLink = document.getElementById('snapchat-link');
+                const snapchatWrapper = document.getElementById('snapchat-wrapper');
+                if (snapchatLink && snapchatWrapper) {
+                    // Utiliser directement l'URL complète fournie dans la configuration
+                    snapchatLink.href = socialLinks.snapchat;
+                    // Masquer si désactivé
+                    if (config.enabledIcons && config.enabledIcons.snapchat === false) {
+                        snapchatWrapper.style.display = 'none';
                     }
                 }
             }

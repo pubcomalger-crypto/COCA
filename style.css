@@ -7,23 +7,21 @@
 
         body {
             background: linear-gradient(180deg, #E8E9ED 0%, #F5F5F7 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
+            padding: 0;
             min-height: 100vh;
-            padding: 20px;
         }
 
         .container {
             width: 100%;
-            max-width: 420px;
-            background: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(40px);
             -webkit-backdrop-filter: blur(40px);
-            border-radius: 40px;
-            padding: 40px 30px;
+            padding: 20px 15px 40px;
             text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+            margin: 0 auto;
         }
 
         .profile-image {
@@ -111,16 +109,20 @@
 
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin-top: 30px;
-            padding: 0 10px;
+            padding: 0 5px;
+            width: 100%;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .social-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -164,7 +166,65 @@
         .whatsapp { background: #25D366; }
         .telegram { background: #0088cc; }
         .snapchat { background: #FFFC00; }
-        .phone { background: #34C759; }
+        .phone { background: #34C759; position: relative; z-index: 1; }
+        
+        .phone-wrapper {
+            grid-column: 1 / -1;
+            max-width: 100%;
+            padding: 0 5px;
+        }
+        
+        .phone-container {
+            display: flex;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        
+        /* Style pour le conteneur du bouton Enregistrer le contact */
+        .save-contact-container {
+            text-align: center;
+            margin: 15px 0 25px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .save-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 280px;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .save-contact-btn:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .save-contact-btn:active {
+            transform: translateY(0);
+        }
+        
+        .save-contact-btn svg {
+            width: 20px;
+            height: 20px;
+        }
         .maps { background: #EA4335; }
         .website { background: #007AFF; }
 
@@ -179,24 +239,29 @@
 
         @media (max-width: 480px) {
             .container {
-                padding: 30px 20px;
+                padding: 30px 15px;
                 border-radius: 35px;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 10px;
             }
             
             .social-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 15px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                padding: 0 5px;
+                max-width: 100%;
             }
             
             .social-icon {
-                width: 62px;
-                height: 62px;
-                border-radius: 16px;
+                width: 74px;
+                height: 74px;
+                border-radius: 18px;
             }
 
             .social-icon svg {
-                width: 32px;
-                height: 32px;
+                width: 36px;
+                height: 36px;
             }
         }
 

@@ -40,15 +40,15 @@ const profileConfig = {
     enabledIcons: {
         facebook: true,      // Afficher Facebook
         instagram: true,     // Afficher Instagram
-        tiktok: true,        // Afficher TikTok
-        whatsapp: true,      // Afficher WhatsApp
-        telegram: true,      // Afficher Telegram
+        tiktok: false,        // Afficher TikTok
+        whatsapp: false,      // Afficher WhatsApp
+        telegram: false,      // Afficher Telegram
         linkedin: false,     // Afficher LinkedIn (mettre true pour l'activer)
-        website: true,       // Afficher Site Web
-        maps: true,          // Afficher Maps
+        website: false,       // Afficher Site Web
+        maps: false,          // Afficher Maps
         phone: true,         // Afficher Téléphone
-        snapchat: true,      // Afficher Snapchat
-        email: true          // Afficher Email
+        snapchat: false,      // Afficher Snapchat
+        email: false,         // Afficher Email
     },
     
 };

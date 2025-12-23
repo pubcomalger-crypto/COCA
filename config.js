@@ -6,7 +6,7 @@ const profileConfig = {
 
     name: "COCA",
     jobTitle: "Développeuse Web",
-    bio: "",
+    bio: "SALAM",
     address: "Adresse complète du client",
     profileImage: "https://i.ibb.co/NgKMhgMT/cocacola.jpg",
     
@@ -25,7 +25,7 @@ const profileConfig = {
         linkedin: "daisyparkhouse",
         snapchat: "nomdutilisateur",
         email: "pubcom.alger@gmail.com",
-        website: "https://mon-site.com",
+        website: "https://www.youtube.com/",
         maps: "https://maps.app.goo.gl/example",
         phone: "+213658546209"
     },

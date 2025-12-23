@@ -4,7 +4,7 @@ const profileConfig = {
     // Informations de base
 
 
-    name: "AHMDED",
+    name: "COCA",
     jobTitle: "Développeuse Web",
     bio: "",
     address: "Adresse complète du client",
